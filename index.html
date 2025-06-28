@@ -1,86 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CrAzY PaGe</title>
     <style>
-        body {
-            background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
-            background-size: 400% 400%;
-            animation: bgShift 5s infinite alternate ease-in-out;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            color: white;
-            text-align: center;
-        }
+      body {
+        background: linear-gradient(
+          45deg,
+          red,
+          orange,
+          yellow,
+          green,
+          blue,
+          indigo,
+          violet
+        );
+        background-size: 400% 400%;
+        animation: bgShift 5s infinite alternate ease-in-out;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        color: white;
+        text-align: center;
+      }
 
-        @keyframes bgShift {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
+      @keyframes bgShift {
+        0% {
+          background-position: 0% 50%;
         }
+        100% {
+          background-position: 100% 50%;
+        }
+      }
 
-        header h1 {
-            font-size: 3rem;
-            animation: wiggle 1s infinite alternate;
-        }
+      header h1 {
+        font-size: 3rem;
+        animation: wiggle 1s infinite alternate;
+      }
 
-        @keyframes wiggle {
-            0% { transform: rotate(-5deg) scale(1); }
-            100% { transform: rotate(5deg) scale(1.1); }
+      @keyframes wiggle {
+        0% {
+          transform: rotate(-5deg) scale(1);
         }
+        100% {
+          transform: rotate(5deg) scale(1.1);
+        }
+      }
 
-        p {
-            font-size: 1.5rem;
-            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shake 0.2s infinite;
-        }
+      p {
+        font-size: 1.5rem;
+        background: linear-gradient(
+          to right,
+          red,
+          orange,
+          yellow,
+          green,
+          blue,
+          indigo,
+          violet
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shake 0.2s infinite;
+      }
 
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            50% { transform: translateX(5px); }
-            75% { transform: translateX(-5px); }
-            100% { transform: translateX(0); }
+      @keyframes shake {
+        0% {
+          transform: translateX(0);
         }
+        25% {
+          transform: translateX(-5px);
+        }
+        50% {
+          transform: translateX(5px);
+        }
+        75% {
+          transform: translateX(-5px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
 
-        button {
-            font-size: 1.2rem;
-            padding: 10px 20px;
-            background: black;
-            color: white;
-            border: 3px dashed magenta;
-            cursor: pointer;
-            animation: spin 2s infinite linear;
-        }
+      button {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        background: black;
+        color: white;
+        border: 3px dashed magenta;
+        cursor: pointer;
+        animation: spin 2s infinite linear;
+      }
 
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
         }
+        to {
+          transform: rotate(360deg);
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Welcome to My Page</h1>
+      <h1>Welcome to My Page</h1>
     </header>
     <p>if you want find out who is gay!</p>
-    <button onclick="window.open('https://instagram.com/zuck', '_blank')">Click Me!</button>
+    <button onclick="openInstagram()">Click Me!</button>
 
     <script>
-        // Crappy JS animation: Move button randomly
-        setInterval(() => {
-            const btn = document.querySelector("button");
-            btn.style.position = "absolute";
-            btn.style.left = Math.random() * window.innerWidth + "px";
-            btn.style.top = Math.random() * window.innerHeight + "px";
-        }, 800);
+      // Crappy JS animation: Move button randomly
+      setInterval(() => {
+        const btn = document.querySelector("button");
+        btn.style.position = "absolute";
+        btn.style.left = Math.random() * window.innerWidth + "px";
+        btn.style.top = Math.random() * window.innerHeight + "px";
+      }, 800);
 
-        // Bonus annoying effect: flashing title
-        setInterval(() => {
-            document.title = Math.random() > 0.5 ? "😵‍💫 CrAzY PaGe" : "🌈 RAINBOW!";
-        }, 300);
+      // Bonus annoying effect: flashing title
+      setInterval(() => {
+        document.title = Math.random() > 0.5 ? "😵‍💫 CrAzY PaGe" : "🌈 RAINBOW!";
+      }, 300);
     </script>
-</body>
+    <script>
+      const links = [
+        "https://www.instagram.com/ak_ash_015/",
+        "https://www.instagram.com/black_mafia_king_143/",
+      ];
+      function openInstagram() {
+        window.open(links[Math.floor(Math.random() * 3)], "_blank");
+      }
+    </script>
+  </body>
 </html>
